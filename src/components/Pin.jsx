@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { urlFor } from '../client';
 
 const Pin = ({ pin: { postedBy, image, _id, destination } }) => {

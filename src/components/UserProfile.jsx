@@ -21,8 +21,6 @@ const UserProfile = () => {
   const navigate = useNavigate();
   const { userId } = useParams();
 
-  const User = localStorage.getItem('user') !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : localStorage.clear();
-
   // Fetch our user data
   useEffect(() => {
     const query = userQuery(userId);
@@ -75,7 +73,7 @@ const UserProfile = () => {
             <div className='absolute top-0 z-1 right-0 p-2'>
               {userId === user._id && (
                   <GoogleLogout 
-                  clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}
+                  clientId={`${process.env.REACT_APP_GOOGLE_API_TOKEN}`}
                   render={(renderProps) => (
                     <button
                       type="button"
